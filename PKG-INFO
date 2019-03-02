@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: flake8-deprecated
+Version: 0.1.0
+Summary: Warns about incorrect usage of string interpolation inside gettext calls.
+Home-page: https://github.com/vharitonsky/flake8-i18n
+Author: Vitaliy Kharitonskiy
+Author-email: vharitonsky@gmail.com
+License: Free
+Description-Content-Type: UNKNOWN
+Description: .. -*- coding: utf-8 -*-
+        
+
+        Flake8 deprecations plugin
+        ==========================
+        Way too often using gettext in python results in one of
+        the following errors:
+
+        _(f"{context_variable}")
+
+        Not only gettext will not work here because fstring interpolation
+        happens before function call, but using gettext tools for collecting
+        translation keys results in:
+
+            File "/usr/lib/python3.6/site-packages/babel/messages/extract.py",
+
+            line 480, in extract_python
+            value = eval(code, {'__builtins__': {}}, {})
+
+            File "<string>", line 2, in <module>
+            NameError: name 'context_variable' is not defined
+
+        Similar cases are
+            _("%s" % value)
+        and
+            _("{}".format(value))
+
+        which will not trigger a collection error,
+        but will still result in an incorrect key name in gettext function call.
+
+        This flake8 extensions provides basic checks for the above cases.
+
+        Install
+        -------
+        Install with pip::
+
+            $ pip install flake8-i18n
+
+        Requirements
+        ------------
+        - Python 3.6, 3.7
+        - flake8
+
+        
+Keywords: pep8 flake8 deprecations
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Free
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Quality Assurance
