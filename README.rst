@@ -70,4 +70,4 @@ Requirements
 
 License
 -------
-Free
+GNU General Public License v2 (GPLv2)
