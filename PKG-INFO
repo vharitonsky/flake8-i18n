@@ -1,5 +1,5 @@
 Metadata-Version: 1.1
-Name: flake8-deprecated
+Name: flake8-i18n
 Version: 0.1.0
 Summary: Warns about incorrect usage of string interpolation inside gettext calls.
 Home-page: https://github.com/vharitonsky/flake8-i18n
@@ -51,12 +51,12 @@ Description: .. -*- coding: utf-8 -*-
         - flake8
 
         
-Keywords: pep8 flake8 deprecations
+Keywords: pep8 flake8 i18n
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Environment :: Console
 Classifier: Intended Audience :: Developers
-Classifier: License :: OSI Approved :: Free
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3.6
